@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>信息页面</title>
+</head>
+<body>
+
+<h2>欢迎来到注册页面</h2>
+
+
+<!--注册页面-->
+    <div>
+        <form action="/adduser" method="post">
+            <label for="">用户名</label>
+            <input type="text" name="username" placeholder="用户名">
+            <label for="">密码</label>
+            <input type="password" name="password" placeholder="密码">
+            <input type="submit" value="注册">
+
+            <!--注册成功，在register显示success-->
+            <h2 th:utext="${msg}"></h2>
+
+            <!--注册失败，在register显示fault-->
+            <h2 th:utext="${msg1}"></h2>
+        </form>
+    </div>
+
+
+<!--删除页面-->
+    <div>
+        <form action="/deleteuser" method="post">
+            <input type="text" name="username" placeholder="用户名">
+            <input type="submit" value="删除用户">
+
+            <!--删除成功，在register显示delete-->
+            <h2 th:utext="${msg2}"></h2>
+
+            <!--删除失败，在register显示fault-->
+            <h2 th:utext="${msg3}"></h2>
+        </form>
+    </div>
+
+
+<!--修改页面-->
+    <div>
+        <form action="/updateuser" method="post">
+            <label for="">用户名</label>
+            <input type="text" name="username" placeholder="用户名">
+            <label for="">密码</label>
+            <input type="password" name="password" placeholder="密码">
+            <input type="submit" value="修改信息">
+
+            <!--修改成功，在register显示update-->
+            <h2 th:utext="${msg4}"></h2>
+
+            <!--修改失败，在register显示fault-->
+            <h2 th:utext="${msg5}"></h2>
+        </form>
+    </div>
+
+<!-得到一个用户-->
+    <div>
+        <form action="/getuser" method="post">
+            <input type="text" name="username" placeholder="用户名">
+            <input type="submit" value="查找用户">
+
+            <!--查询成功，在register显示get-->
+            <h2 th:utext="${msg6}"></h2>
+
+            <!--查询成功，在register显示fault-->
+            <h2 th:utext="${msg7}"></h2>
+        </form>
+    </div>
+
+
+<!--得到所有用户-->
+    <div>
+        <form action="/getalluser" method="post">
+            <input type="submit" value="获取所有用户">
+        </form>
+    </div>
+
+
+</body>
+</html>
